@@ -36,14 +36,14 @@ def plot_series(data, initial_date, proy):
     data_plot = data_plot[:-(120-proy)]
     fig = go.Figure([
         go.Scatter(
-            name='Demanda energética',
+            name='Energy demand',
             x=data_plot.index,
             y=data_plot['AT_load_actual_entsoe_transparency'],
             mode='lines',
             line=dict(color="#188463"),
         ),
         go.Scatter(
-            name='Proyección',
+            name='Projection',
             x=data_plot.index,
             y=data_plot['forecast'],
             mode='lines',
@@ -79,12 +79,12 @@ def plot_series(data, initial_date, proy):
             xanchor="right",
             x=1
         ),
-        yaxis_title='Demanda total [MW]',
+        yaxis_title='Total demand [MW]',
         #title='Continuous, variable value error bars',
         hovermode="x"
     )
     #fig = px.line(data2, x='local_timestamp', y="Demanda total [MW]", markers=True, labels={"local_timestamp": "Fecha"})
-    fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color="#2cfec1")
+    fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color="#EBD13F")
     fig.update_xaxes(showgrid=True, gridwidth=0.25, gridcolor='#7C7C7C')
     fig.update_yaxes(showgrid=True, gridwidth=0.25, gridcolor='#7C7C7C')
     #fig.update_traces(line_color='#2cfec1')
